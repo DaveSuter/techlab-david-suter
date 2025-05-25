@@ -170,7 +170,6 @@ public class MenuService {
         scanner.nextLine();
         try {
             productoService.buscarActualizarProducto(id, listaProductos);
-            System.out.println("El producto se modificó con éxito.");
         } catch (IndexOutOfBoundsException e){
             System.out.println("No existe ningún producto con el id ingresado.");
         } catch (NullPointerException e){ //No creo que se use
@@ -185,7 +184,7 @@ public class MenuService {
     }
 
     private void eliminarProducto(){
-        if (listaProductos!=null){
+        if (!listaProductos.isEmpty()){
             int id;
             boolean eliminar;
             opcionValida = false;

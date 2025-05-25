@@ -49,13 +49,13 @@ public class ProductoService {
     }
 
     public void buscarActualizarProducto(int id, ArrayList<Object> listaProductos) {
-        if (listaProductos == null || listaProductos.isEmpty()) {
+        if (listaProductos.isEmpty()) {
             System.out.println("No hay productos cargados.");
         } else {
             Object object = listaProductos.get(id);
             Producto producto = (Producto) object;
             System.out.println("Producto:");
-            System.out.print("Id: " + producto.getId() + " - Nombre: " + producto.getNombre() + " - Precio: " +
+            System.out.println("Id: " + producto.getId() + " - Nombre: " + producto.getNombre() + " - Precio: " +
                     producto.getPrecio() + " - Stock: " + producto.getStock());
             menuService.menuActualizar(object);
             //Valido la clase
@@ -66,6 +66,7 @@ public class ProductoService {
                 Bebida bebida = (Bebida) object;
                 listaProductos.set(id, bebida);
             }
+            System.out.println("El producto se modificó con éxito.");
         }
     }
 
